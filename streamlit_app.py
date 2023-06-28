@@ -39,7 +39,7 @@ streamlit.write('The user entered ', fruit_choice)
 # write your own comment - what does this do?
 # fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # streamlit.dataframe(fruityvice_normalized)
-streamlit.stop()
+# streamlit.stop()
 # import snowflake.connector
 streamlit.header("The fruit load list contains:")
 #Snowflake related functions
@@ -52,6 +52,7 @@ if streamlit.button('Get Fruit Load List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
+streamlit.stop()
 # my_cur = my_cnx.cursor()
 # my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 # my_data_rows = my_cur.fetchall()
